@@ -21,19 +21,18 @@ public class Houses
     drawHouse(90);
     //   DrawHouse with height 20 (recipe below) --#13
     drawHouse(20);
+    drawHouse();
   }
   private static void drawHouse()
   {
     //   drawHouse (recipe below) --#9
     //   ------------- Recipe for drawHouse --#9
     //   Change the color of the line the tortoise draws to lightGray --#15
+    Tortoise.setPenColor(Colors.Grays.LightGray);
     Tortoise.move(height);
-    //   Turn the tortoise 90 degrees to the right --#2
-    Tortoise.turn(90);
-    //   Move the tortoise 30 pixels --#3
-    Tortoise.move(width);
-    //   Turn the tortoise 90 degrees to the right --#4
-    Tortoise.turn(90);
+    //    flatRoof();
+    triangleRoof();
+    flatRoof();
     //   Move the tortoise the height of a house --#5
     Tortoise.move(height);
     //   Turn the tortoise 90 degrees to the left --#6
@@ -42,9 +41,6 @@ public class Houses
     Tortoise.move(20);
     //   Turn the tortoise 90 degrees to the left --#8
     Tortoise.turn(270);
-    height += 40;
-    //height *= -1;
-    width += 20;
     drawHouse();
   }
   private static void drawHouse(int height)
@@ -54,19 +50,32 @@ public class Houses
     //   Change the color of the line the tortoise draws to lightGray --#15
     Tortoise.setPenColor(Colors.Grays.LightGray);
     Tortoise.move(height);
-    //   Turn the tortoise 90 degrees to the right --#2
-    Tortoise.turn(90);
-    //   Move the tortoise 30 pixels --#3
-    Tortoise.move(30);
-    //   Turn the tortoise 90 degrees to the right --#4
-    Tortoise.turn(90);
+    //    flatRoof();
+    triangleRoof();
     //   Move the tortoise the height of a house --#5
     Tortoise.move(height);
     //   Turn the tortoise 90 degrees to the left --#6
     Tortoise.turn(270);
     //   Move the tortoise 20 pixels --#7
-    Tortoise.move(20);
+    Tortoise.move(0);
     //   Turn the tortoise 90 degrees to the left --#8
     Tortoise.turn(270);
+  }
+  private static void flatRoof()
+  {
+    //   Turn the tortoise 90 degrees to the right --#2
+    Tortoise.turn(60);
+    //   Move the tortoise 30 pixels --#3
+    Tortoise.move(10);
+    //   Turn the tortoise 90 degrees to the right --#4
+    Tortoise.turn(90);
+  }
+  private static void triangleRoof()
+  {
+    Tortoise.turn(30);
+    Tortoise.move(10);
+    Tortoise.turn(120);
+    Tortoise.move(10);
+    Tortoise.turn(30);
   }
 }
