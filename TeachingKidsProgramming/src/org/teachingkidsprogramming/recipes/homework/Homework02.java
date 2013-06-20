@@ -2,9 +2,7 @@ package org.teachingkidsprogramming.recipes.homework;
 
 import junit.framework.Assert;
 
-import org.junit.Ignore;
 import org.junit.Test;
-
 
 public class Homework02
 {
@@ -21,19 +19,32 @@ public class Homework02
   public void youCanReadVariables() throws Exception
   {
     int numberOfDesserts = 5;
-    Assert.assertEquals(numberOfDesserts, ____);
+    Assert.assertEquals(numberOfDesserts, 5);
   }
   @Test
   public void youCanSaveVariables() throws Exception
   {
-    int ickynessOfBrothers = ____;
+    int ickynessOfBrothers = 2 * 5;
     Assert.assertEquals(10, ickynessOfBrothers);
   }
   @Test
   public void youCanDoMathWithVariables() throws Exception
   {
-    int ____ = 3 + 4;
-    Assert.assertEquals(7, numberOfHarryPotterBooks);
+    int numberOfHarryPotterBooks = 3 + 4;
+    String[][] books = {{"Harry Potter and the Philosopher's Stone", "(June 26, 1997)"},
+        {"Harry Potter and the Chamber of Secrets", "(July 2, 1998)"},
+        {"Harry Potter and the Prisoner of Azkaban", "(July 8, 1999)"},
+        {"Harry Potter and the Goblet of Fire", "(July 8, 2000)"},
+        {"Harry Potter and the Order of the Phoenix", "(June 21, 2003)"},
+        {"Harry Potter and the Half-Blood Prince", "(July 16, 2005)"},
+        {"Harry Potter and the Deathly Hallows", "(Scheduled for July 21, 2007)"}};
+    for (String[] book : books)
+    {
+      for (String test : book)
+        System.out.print(test + " ");
+      System.out.println();
+    }
+    Assert.assertEquals(books.length, numberOfHarryPotterBooks);
   }
   @Test
   public void youCanChangeVariables() throws Exception
@@ -41,14 +52,14 @@ public class Homework02
     int milkTastiness = 6;
     addChocolate();
     milkTastiness = 10;
-    Assert.assertEquals(milkTastiness, ____);
+    Assert.assertEquals(milkTastiness, 2 * 5);
   }
   @Test
   public void variablesAreSnotStuck() throws Exception
   {
     int boogers = 4;
     blowNose();
-    boogers = ____;
+    boogers = 0;
     Assert.assertEquals(0, boogers);
   }
   @Test
@@ -56,15 +67,15 @@ public class Homework02
   {
     int age = 11;
     celebrateBirthday();
-    age += ____;
+    age += 6 - 5;
     Assert.assertEquals(12, age);
   }
   @Test
   public void youCanAddInMultipleWays() throws Exception
   {
     int bakersDozen = 12;
-    bakersDozen = bakersDozen + ____;
-    Assert.assertEquals(13, bakersDozen);
+    bakersDozen = bakersDozen + 1;
+    Assert.assertEquals("IaBakersDozen".length(), bakersDozen);
   }
   @Test
   public void youCanAddOneInOneMoreWay() throws Exception
@@ -72,13 +83,13 @@ public class Homework02
     int bearsInABed = 3;
     andTheLittleOneSaid("I'm lonely, come back here");
     bearsInABed++;
-    Assert.assertEquals(bearsInABed, ____);
+    Assert.assertEquals(bearsInABed, Integer.parseInt("4"));
   }
   @Test
   public void youCanSubtractFromAVariable() throws Exception
   {
     int amountOfHomework = 3;
-    amountOfHomework -= ____;
+    amountOfHomework -= 3;
     Assert.assertEquals(0, amountOfHomework);
   }
   @Test
@@ -86,20 +97,20 @@ public class Homework02
   {
     int bottlesOfBeerOnTheWall = 99;
     bottlesOfBeerOnTheWall--;
-    Assert.assertEquals(bottlesOfBeerOnTheWall, ____);
+    Assert.assertEquals(bottlesOfBeerOnTheWall, 98);
   }
   @Test
   public void youCanMultiplyVariables() throws Exception
   {
     int volumeOfMyVoice = 2;
     int volumeMyMomHears = volumeOfMyVoice * 5;
-    Assert.assertEquals(____, volumeMyMomHears);
+    Assert.assertEquals(2 * 5, volumeMyMomHears);
   }
   @Test
   public void youCanDivideVariables() throws Exception
   {
     int inches = 36;
-    int feet = ____ / 12;
+    int feet = inches / 12;
     Assert.assertEquals(3, feet);
   }
   @Test
@@ -107,7 +118,7 @@ public class Homework02
   {
     String xmasList = "bike";
     dreamBigger(); //This method is directly below
-    Assert.assertEquals(xmasList, ___);
+    Assert.assertEquals(xmasList, "bike");
   }
   private void dreamBigger()
   {
@@ -117,7 +128,9 @@ public class Homework02
   public void methodsCanReturnValues() throws Exception
   {
     String bedPost = prepareForBed(); //This method is directly below
-    Assert.assertEquals(bedPost, ___);
+    Assert
+        .assertEquals(bedPost, ("there is some " + "g" + "u" + "m" + " under the bed").split("there is some ")[1]
+            .split(" under the bed")[0]);
   }
   public String prepareForBed()
   {
