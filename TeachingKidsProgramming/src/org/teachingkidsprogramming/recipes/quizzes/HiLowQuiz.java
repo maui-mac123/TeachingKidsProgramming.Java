@@ -1,5 +1,6 @@
 package org.teachingkidsprogramming.recipes.quizzes;
 
+import org.teachingextensions.logo.Tortoise;
 import org.teachingkidsprogramming.recipes.quizzes.graders.HiLowQuizGrader;
 
 public class HiLowQuiz extends org.teachingkidsprogramming.recipes.quizzes.graders.HiLowQuiz
@@ -8,12 +9,18 @@ public class HiLowQuiz extends org.teachingkidsprogramming.recipes.quizzes.grade
   {
     //        if the Y position of the tortoise is 115
     //
+    if (Tortoise.getY() == 115)
+      Tortoise.turn(63);
     //         turn the tortoise to the right 63 degrees 
   }
   public void question2()
   {
     //        if the X position of tortoise is less than Y position of tortoise
     //
+    if (Tortoise.getY() < Tortoise.getX())
+      Tortoise.turn(-54);
+    else
+      Tortoise.turn(22);
     //         turn the tortoise 54 degrees to the left
     //
     //        otherwise turn the tortoise 22 degrees to the right

@@ -18,12 +18,17 @@ public class HiLow
     for (int _guesses = 1; _guesses <= 8; _guesses++)
     {
       int _response = MessageBox.askForNumericalInput("GUESS!!!");
+      if (_response < 1 || 100 < _response)
+      {
+        MessageBox.showMessage("Please put a number between 1 and 100");
+        _guesses--;
+      }
       //     If the guess is correct --#4
       if (_response == _rand)
       {
         //     Play a bell --#2
         //     Tell the user that they won the game  --#3
-        MessageBox.showMessage("You freaking won.\nNow listen to your failures.");
+        MessageBox.showMessage("You freaking won.\nNow listen and dwell upon your failures.");
         _guesses++;
         while (_guesses >= 0)
         {
@@ -48,5 +53,13 @@ public class HiLow
         }
       }
     }
+    MessageBox.showMessage("You lost,\nThe correct answer was " + _rand);
+    int _guesses = 8;
+    while (_guesses >= 0)
+    {
+      Sounds.playBeep();
+      _guesses--;
+    }
+    System.exit(0);
   }
 }
