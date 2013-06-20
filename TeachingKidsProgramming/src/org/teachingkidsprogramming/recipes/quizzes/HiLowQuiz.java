@@ -1,6 +1,7 @@
 package org.teachingkidsprogramming.recipes.quizzes;
 
 import org.teachingextensions.logo.Tortoise;
+import org.teachingextensions.windows.MessageBox;
 import org.teachingkidsprogramming.recipes.quizzes.graders.HiLowQuizGrader;
 
 public class HiLowQuiz extends org.teachingkidsprogramming.recipes.quizzes.graders.HiLowQuiz
@@ -17,7 +18,7 @@ public class HiLowQuiz extends org.teachingkidsprogramming.recipes.quizzes.grade
   {
     //        if the X position of tortoise is less than Y position of tortoise
     //
-    if (Tortoise.getY() < Tortoise.getX())
+    if (Tortoise.getX() < Tortoise.getY())
       Tortoise.turn(-54);
     else
       Tortoise.turn(22);
@@ -28,11 +29,14 @@ public class HiLowQuiz extends org.teachingkidsprogramming.recipes.quizzes.grade
   public void question3()
   {
     //        display the message "elcomeway omehay!"
+    MessageBox.showMessage("elcomeway" + " omehay!");
   }
   public void question4()
   {
     //        if the Y position of tortoise is greater than 50
     //
+    if (Tortoise.getY() > 50)
+      Tortoise.turn(-177);
     //         turn the tortoise 177 degrees to the left
   }
   public static void main(String[] args)
