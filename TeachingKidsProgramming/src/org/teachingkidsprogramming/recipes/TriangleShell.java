@@ -1,5 +1,7 @@
 package org.teachingkidsprogramming.recipes;
 
+import org.teachingextensions.logo.Colors;
+import org.teachingextensions.logo.Tortoise;
 
 public class TriangleShell
 {
@@ -7,18 +9,31 @@ public class TriangleShell
   public static void main(String[] args)
   {
     //    Show the tortoise --#1
+    Tortoise.show();
     //    Make the tortoise go as fast as possible --#7
+    Tortoise.setSpeed(10);
     //    Do the following 60 times --#8
-    //          Change the color of the line the tortoise draws to a random color --#10
-    //          Increase the current length of the side by 4 pixels --#9
-    //          drawTriangle (recipe below) --#6
-    //          ------------- Recipe for drawTriangle --#5
-    //              Do the following 3 times --#3
-    //                      Move the tortoise the current length of a side --#4
-    //                      Turn the tortoise 1/3rd of 360 degrees --#2
-    //              Repeat 
-    //          ------------- End of drawTriangle recipe --#5
-    //          Turn the tortoise 1/60th of 360 degrees to the right --#11
-    //    Repeat 
+    for (int i = 1; i <= 60; i++)
+    {
+      //          Change the color of the line the tortoise draws to a random color --#10
+      Tortoise.setPenColor(Colors.getRandomColor());
+      //          Increase the current length of the side by 4 pixels --#9
+      Tortoise.move(i + 4);
+      //          drawTriangle (recipe below) --#6
+      //          ------------- Recipe for drawTriangle --#5
+      //              Do the following 3 times --#3
+      for (int j = 1; j <= 3; j++)
+      {
+        //                      Move the tortoise the current length of a side --#4
+        Tortoise.move(10);
+        //                      Turn the tortoise 1/3rd of 360 degrees --#2
+        Tortoise.turn(360 / 60);
+        //              Repeat 
+      }
+      //          ------------- End of drawTriangle recipe --#5
+      //          Turn the tortoise 1/60th of 360 degrees to the right --#11
+      Tortoise.turn(360 / 3);
+      //    Repeat 
+    }
   }
 }
