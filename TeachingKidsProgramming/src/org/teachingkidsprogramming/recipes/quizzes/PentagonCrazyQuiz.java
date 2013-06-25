@@ -8,32 +8,23 @@ import org.teachingkidsprogramming.recipes.quizzes.graders.PentagonQuiz;
 
 public class PentagonCrazyQuiz extends PentagonQuiz
 {
-  //      Question1
-  //      Create a method called thread
-  //       that moves the tortoise 6 pixels
   public void thread()
   {
-    // TODO Auto-generated method stub
     Tortoise.move(6);
   }
   public void question2()
   {
-    //        Do the following 76 times
     for (int i = 1; i <= 76; i++)
     {
-      //        Quiz.Stitch()
       stitch();
     }
-    //        Repeat
   }
   public void question3()
   {
-    //        Add lime to the color wheel
     ColorWheel.addColor(Colors.Greens.Lime);
   }
   public void question4()
   {
-    //        Add red to the color wheel
     ColorWheel.addColor(Colors.Reds.Red);
   }
   public static void main(String[] args)
